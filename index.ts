@@ -10,7 +10,7 @@ const dict = new Map<string, Object>([
 let value = false;
 
 let obj = {
-  green_large: (value = true),
+  green_large: setValue,
   green_small: mostrar,
   green_xs: mostrar2,
 };
@@ -19,7 +19,7 @@ let obj = {
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
-exec('green', 'large', '');
+exec('green', 'large');
 
 function mostrar() {
   const appDiv: HTMLElement = document.getElementById('app');
@@ -31,8 +31,12 @@ function mostrar2() {
   appDiv.innerHTML = `<h1>Prueba 2</h1>`;
 }
 
-function exec(color, size, param) {
-  let conditional = obj[color + '_' + size + param];
+function setValue() {
+  value = true;
+}
+
+function exec(color, size) {
+  let conditional = obj[color + '_' + size];
   //console.log("VAL: " + conditional());
   conditional();
 }
