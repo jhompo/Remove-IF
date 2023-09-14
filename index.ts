@@ -1,10 +1,10 @@
 // Import stylesheets
 import './style.css';
 
-const dict = new Map<string, Object>([
-  ['green_large', true],
-  ['green_small', false],
-  ['yellow_small', true],
+const dict = new Map([
+  ['green_large', mostrar2],
+  ['green_small', setValue],
+  ['yellow_small', mostrar],
 ]);
 
 let value = false;
@@ -39,4 +39,10 @@ function exec(color, size) {
   let conditional = obj[color + '_' + size];
   //console.log("VAL: " + conditional());
   conditional();
+
+
+  let conditionalDict = dict.get(color + '_' + size);
+  conditionalDict();
+
+
 }
